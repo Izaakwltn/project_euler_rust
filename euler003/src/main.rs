@@ -6,25 +6,34 @@
 //What is the largest prime factor of the number 600851475143 ?
 
 use std::f64;
-use std::vec::Vec;
+//use std::vec::Vec;
 //use std::iter;
 
-fn prime (n: f64) -> bool{
-    let mut i = 2.0;
+fn prime (n: u64) -> bool{
+    let limit = (n as f64).sqrt() as u64;
     
-    loop {
-	i += 1.0;
-	
-	if  (n % i) == 0.0 {
+    for i in 2..=limit {
+	if n % i == 0 {
 	    return false;
 	}
-	if i > n.sqrt() {
-	    return true;
-	}
     }
+    true
 }
 
-fn prime_test () {
+fn largest_prime_factor (big_num: u64) -> u64{
+    let limit = (big_num as f64).sqrt() as u64;
+
+    let mut current_largest = 0;
+    
+    for i in 2..=limit {
+	if big_num % i == 0 && prime(i){
+	    current_largest = i;
+	}
+    }
+    current_largest
+}
+    
+/*fn prime_test () {
     let mut nums: Vec<f64> = Vec::new();
 
     for i in 1..100 {
@@ -37,16 +46,16 @@ fn prime_test () {
 
     println!("{:?}", primes);
     //return primes.iter().map(|x| println!("{}", x.to_string()));
-}
+}*/
 //factors
 //fn euler3() -> u32 {
     
 //}
 
 fn main() {
-    println!("Hello, world!");
-    assert_eq! (prime(3.0), true);
-    assert_eq! (prime(4.0), false);
-    assert_eq! (prime(5.0), true);
-    prime_test();
+    assert_eq!(largest_prime_factor(13195), 29);
+    println!("Project Euler # 3: {}", largest_prime_factor(600851475143));
+    //println!("{}", (9.0 % 3.0));
+    
+    //prime_test();
 }
