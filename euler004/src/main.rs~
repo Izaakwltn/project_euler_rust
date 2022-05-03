@@ -1,0 +1,18 @@
+//Project Euler #4
+// Palindrome product of 3 digit numbers
+
+fn reverse_string(s: &str) -> String {
+    s.chars().rev().collect()
+}
+
+fn is_palindrome(n: u32) -> bool {
+    if &n.to_string == reverse_string(n.to_string()) {
+        return true;
+    }
+    false
+}
+
+fn main() {
+    println!("Hello, world!");
+    assert_equal!(reverse_string("turtles"), "seltrut");
+}
