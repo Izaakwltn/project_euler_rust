@@ -12,18 +12,20 @@ of the first one hundred natural numbers and the square of the sum.
 
 fn euler6() -> u32 {
     let mut sum_of_squares = 0;
-    for i in 1..100 {
+    for i in 1..=100 {
         sum_of_squares += i * i;
     }
 
     let mut to_be_squared = 0;
-    for i in 1..100 {
+    for i in 1..=100 {
         to_be_squared += i;
     }
 
-    let squared_sum = to_be_squared * to_be_squared;
+    //let squared_sum = to_be_squared * to_be_squared;
 
-    return sum_of_squares - squared_sum;
+    //sum_of_squares - (to_be_squared * to_be_squared)
+    //squared_sum
+    (to_be_squared * to_be_squared) - sum_of_squares
 }
 
 fn main() {
