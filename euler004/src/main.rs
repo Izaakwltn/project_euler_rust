@@ -5,12 +5,19 @@ fn reverse_string(s: &str) -> String {
     s.chars().rev().collect()
 }
 
+/*Worse version for posterity:
+
 fn is_palindrome(n: u32) -> bool {
     let sn = n.to_string();
     if sn == reverse_string(&sn) {
         return true;
     }
     false
+}*/
+
+fn is_palindrome(n: u32) -> bool {
+    let s = n.to_string();
+    s == reverse_string(&s)
 }
 
 fn euler4() -> u32 {

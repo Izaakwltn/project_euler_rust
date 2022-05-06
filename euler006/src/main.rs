@@ -21,10 +21,6 @@ fn euler6() -> u32 {
         to_be_squared += i;
     }
 
-    //let squared_sum = to_be_squared * to_be_squared;
-
-    //sum_of_squares - (to_be_squared * to_be_squared)
-    //squared_sum
     (to_be_squared * to_be_squared) - sum_of_squares
 }
 

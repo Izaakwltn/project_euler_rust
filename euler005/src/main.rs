@@ -31,3 +31,4 @@ fn peuler5() -> u32 {
 fn main() {
     println!("Project Euler #5: {}", peuler5());
 }
+/////so slow... can improve?

@@ -3,15 +3,14 @@ fn euler1() -> u32 {
     let mut sum = 0;
 
     for i in 3..999 {
-	if ((i % 3) == 0) | ((i % 5) == 0) {
-	    sum += i;
-	}
+        if ((i % 3) == 0) || ((i % 5) == 0) {
+            sum += i;
+        }
     }
 
-    return sum;
-    
+    sum
 }
 
 fn main() {
-    println!("Project Euler # 1: {}", euler1().to_string());
+    println!("Project Euler # 1: {}", euler1());
 }
